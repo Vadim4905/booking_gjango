@@ -1,0 +1,14 @@
+{% extends 'booking/base.html' %}
+
+{% block content %}
+
+
+<ul>
+{% for room in rooms %}
+    <li> <a href="{% url 'room' room.pk %}" >{{room.number}} </a> </li>
+{% endfor %}
+
+
+</ul>
+
+{% endblock content %}
