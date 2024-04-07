@@ -1,0 +1,32 @@
+{% extends 'booking/base.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+    <h1> Booking form </h1>
+    <form method="POST" action='{% url "booking-form" %}'>
+        {% csrf_token %}
+
+        <label for="room_number">Room Number:</label>
+        <input type="text"  id="room_number" name="room_number" required>
+        <hr>
+
+        <label for="room_number">Start time:</label>
+        <input type="datetime-local"  id="room_number" name="start_time" required>
+        <hr>
+
+        <label for="room_number">End Time:</label>
+        <input type="datetime-local"  id="room_number" name="end_time" required>
+        <hr>
+
+        <button type="submit" class = 'gradient-button' value="Order"> Order </button>
+    </from>
+
+    {% else %}
+    <h1> You are not authenticated </h1>
+
+{% endif %}
+
+
+{% endblock content %}
