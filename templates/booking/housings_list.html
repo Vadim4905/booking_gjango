@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+  <div class="container text-center">
+  <div class="row row-cols-1">
+{% for housing in housings %}    
+
+<div class="card mb-2" style="max-width: 600px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <a href="{% url 'housing-detail' housing.pk %}">
+      <img src="{{housing.images.all.0.image.url}}" class="img-fluid rounded-start" alt="...">
+      </a>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="{% url 'housing-detail' housing.pk %}">
+        <h5 class="card-title">{{housing.title}}</h5>
+        </a>
+        <p class="card-text">{{housing.description}}</p>
+        <p class="card-text"><small class="text-muted">Rating: {{housing.rating}}</small></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<br>
+{% endfor %}
+
+</div>
+
+{% comment %} <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Number</th>
+        <th scope="col">Capacity</th>
+        <th scope="col">Price per day</th>
+      </tr>
+    </thead>
+    <tbody>
+
+{% for housing in housings %}        
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+       <td> <a href="{% url 'housing-detail' housing.pk %}">{{housing.number}}</a></td>
+        <td>{{housing.capacity}}</td>
+        <td>{{housing.price_per_day}}</td>
+      </tr>
+
+
+{% endfor %}
+
+    </tbody>
+  </table> {% endcomment %}
+
+
+
+
+
+
+{% endblock content %}
