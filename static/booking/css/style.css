@@ -20,3 +20,27 @@
 .gradient-button:hover {
     background-position: right center;
   }
+
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px; /* Або будь-яка інша ширина, в залежності від розміру квадратиків */
+}
+
+.day {
+    width: 45px; /* Ширина квадратика */
+    height: 45px; /* Висота квадратика */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    border-radius: 5px; /* Закруглення країв */
+}
+
+.free {
+    background-color: lightgreen; /* Колір для вільних днів */
+}
+
+.booked {
+    background-color: lightcoral; /* Колір для зайнятих днів */
+}

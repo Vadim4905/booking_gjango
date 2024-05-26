@@ -9,8 +9,14 @@
 <link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
 <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
 
+<div class="container text-center">
+    <h1>Avaliability of <a href='{% url "housing-detail" housing.pk %}'  >{{ housing.title }}</a> for {{ today|date:"F Y" }}</h1>
+{% include "calendar.html" %} 
+</div>
+
 
 <div class="container d-flex justify-content-center align-items-center">
+
 
     <form method="POST" >
         {% csrf_token %}
