@@ -1,0 +1,7 @@
+<div class="calendar">
+    {% for day in days_of_month %}
+        <div class="day {% if day in booked_days %}booked{% else %}free{% endif %}">
+            {{ day }}
+        </div>
+    {% endfor %}
+</div>

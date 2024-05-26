@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'booking_system.urls'
@@ -107,6 +108,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+# LANGUAGES = [
+#     ('en', _('English')),
+#     ('es', _('Spanish')),
+#     # Add more languages here
+# ]
+
+
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -142,3 +151,8 @@ LOGIN_URL = 'login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'auth_system.CustomUser'
+
+#to-do 
+# filter the booking by location, date, ect.
+# localization(translation)
+# calendar
